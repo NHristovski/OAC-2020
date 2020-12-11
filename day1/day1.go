@@ -14,11 +14,10 @@ func check(e error) {
 	}
 }
 
-
 func checkIfSumExists(goal, numberToSkip int64) int64 {
 	numberSkipped := false
 
-	file, err := os.Open("day1_input")
+	file, err := os.Open("day1/day1_input")
 	check(err)
 
 	// close the file after the function ends
@@ -58,7 +57,7 @@ func checkIfSumExists(goal, numberToSkip int64) int64 {
 }
 
 func main() {
-	file, err := os.Open("day1_input")
+	file, err := os.Open("day1/day1_input")
 	check(err)
 
 	defer file.Close()
@@ -74,7 +73,7 @@ func main() {
 
 		result := checkIfSumExists(goal, firstNumber)
 
-		if result != -1{
+		if result != -1 {
 			fmt.Println(result * firstNumber)
 			os.Exit(0)
 		}
